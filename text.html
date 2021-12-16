@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>Document</title>
+	<link rel= "stylesheet" type= "text/css" href= "static/styles.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type=text/javascript>
+				$(document).ready(function() {
+
+			$("#btn-signup").click(function() {
+				$(".signup-win").slideDown(2000);
+
+			});
+			//--------------------------
+			$("#cross").click(function() {
+				//$("#signup-win").fadeOut();
+				$(".signup-win").hide(2000);
+			});
+			$("#btn-output").bind("click",function() {
+				alert(postMessage(messages));
+				("#signup-win").show();
+			});
+
+		});
+		</script>
+
+</head>
+<body>
+<h1 style="text-align:right ; color : white; font-size: 50px" > Depression Analysis using Tweets</h1>
+<table style="right:450px" align="right";>
+    <tr>
+        <td width="500 px">
+            <h3 style="color: white; font-size: 20px">
+                "Getting better from depression demands a lifelong commitment. You have to made that commitment for your life's sake and for the sake of those who love you."
+            </h3>
+        </td>
+    </tr>
+    <tr>
+            <td align="center" width="500px">
+					<div class="btn" id="btn-signup">Analyse Post</div>
+
+
+	<div class="signup-win hide">
+		<div id="cross"></div>
+		<form action="{{ url_for('gfg')}}" method="post">
+		<table width="100%" border=0>
+			<tr>
+				<td align="center">
+					<span class="headings">Enter Post</span>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="text" placeholder="Please! Enter Post here." id="txtuids" name="inp" class="user"></td>
+			</tr>
+			<tr>
+				<td align="center">
+					<button class="btn" style="background-color: darkred ; color: white" type="submit" >Analyse</button>
+				</td>
+			</tr>
+		</table>
+		</form>
+	</div>
+            </td>
+    </tr>
+</table>
+
+</body>
+</html>
